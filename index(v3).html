@@ -148,24 +148,14 @@
         /* Header */
         header {
             padding: 1rem 5%;
-            /* background-color: rgba(16, 16, 16, 0.8); */ /* Original background */
-            background-color: transparent; /* Transparent by default */
-            /* backdrop-filter: blur(10px); */ /* Original blur */
-            /* -webkit-backdrop-filter: blur(10px); */ /* Original blur */
+            background-color: rgba(16, 16, 16, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
-            /* Added transition for smooth effect */
-            transition: background-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
         }
-        /* New class for scrolled state */
-        header.scrolled {
-            background-color: rgba(16, 16, 16, 0.8);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
         header img {
             opacity: 0.85;
             transition: opacity 0.2s ease-in-out, transform 0.3s ease;
@@ -637,14 +627,6 @@
             .modal-content {
                 max-width: 800px;
             }
-            /* ADDED: Constrain modal image height on desktop */
-            .modal-image {
-                width: auto; /* Let width adjust to height */
-                max-width: 100%; /* Don't exceed container width */
-                max-height: 80vh; /* Constrain height to 80% of viewport */
-                display: block; /* Needed for margin auto to work */
-                margin: 0 auto; /* Center the image horizontally if width is constrained by height */
-            }
         }
         @media (max-width: 768px) {
             header {
@@ -668,6 +650,9 @@
 
     <!-- 
       Schema.org Structured Data 
+      (No changes needed - this is already correct!)
+      Using 'CollectionPage' is the perfect way to tell Google this page
+      is a portfolio or gallery showing a collection of items.
     -->
     <script type="application/ld+json">
     {
@@ -946,28 +931,6 @@
             portfolioItems.forEach(item => { observer.observe(item); });
 
             
-            // ADDED: Header Scroll Effect
-            const headerElement = document.querySelector('header');
-            if (headerElement) {
-                const scrollThreshold = 10; // Pixels to scroll before changing header
-
-                const handleHeaderScroll = () => {
-                    if (window.scrollY > scrollThreshold) {
-                        headerElement.classList.add('scrolled');
-                    } else {
-                        headerElement.classList.remove('scrolled');
-                    }
-                };
-
-                // Run on load in case the page is reloaded scrolled down
-                handleHeaderScroll();
-                
-                // Add scroll listener
-                window.addEventListener('scroll', handleHeaderScroll, { passive: true });
-            }
-            // END: Header Scroll Effect
-
-
             // --- UPDATED: Global Synchronized Slideshow Logic ---
             
             // 1. Array to hold all active slideshows
@@ -1172,3 +1135,4 @@
     </script>
 </body>
 </html>
+

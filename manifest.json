@@ -8,13 +8,13 @@
   "theme_color": "#FF6600",
   "icons": [
     {
-      "src": "resources/project_cover-icon-orange(192x192).png",
+      "src": "https://projectcover.github.io/media/brand/project_cover-icon-orange(192x192).png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "resources/project_cover-icon-orange(512x512).png",
+      "src": "https://projectcover.github.io/media/brand/project_cover-icon-orange(512x512).png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
