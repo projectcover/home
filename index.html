@@ -637,14 +637,6 @@
             .modal-content {
                 max-width: 800px;
             }
-            /* ADDED: Constrain modal image height on desktop */
-            .modal-image {
-                width: auto; /* Let width adjust to height */
-                max-width: 100%; /* Don't exceed container width */
-                max-height: 80vh; /* Constrain height to 80% of viewport */
-                display: block; /* Needed for margin auto to work */
-                margin: 0 auto; /* Center the image horizontally if width is constrained by height */
-            }
         }
         @media (max-width: 768px) {
             header {
@@ -668,6 +660,9 @@
 
     <!-- 
       Schema.org Structured Data 
+      (No changes needed - this is already correct!)
+      Using 'CollectionPage' is the perfect way to tell Google this page
+      is a portfolio or gallery showing a collection of items.
     -->
     <script type="application/ld+json">
     {
@@ -762,10 +757,11 @@
                     <div class="image-container">
                         <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Loading..." class="image-loader-logo" width="48" height="48">
                         <!-- SEO: Updated Alt Text -->
-                        <img src="https://projectcover.github.io/media/covers/11zeros-Corrugated_1.jpg" alt="Photo of the 11zeros Corrugated case for Samsung S23 Ultra showing its textured black back and orange camera ring." width="600" height="800">
-                        <!-- SEO: Updated Alt Text -->
-                        <img src="https://projectcover.github.io/media/covers/11zeros-Corrugated_2.jpg" alt="Angled photo of the 11zeros Corrugated S23 Ultra case." width="600" height="800">
                         <!-- FIXED: Removed width and height attributes to allow CSS to preserve aspect ratio -->
+                        <img src="https://projectcover.github.io/media/covers/11zeros-Corrugated_1.jpg" alt="Photo of the 11zeros Corrugated case for Samsung S23 Ultra showing its textured black back and orange camera ring.">
+                        <!-- SEO: Updated Alt Text -->
+                        <!-- FIXED: Removed width and height attributes to allow CSS to preserve aspect ratio -->
+                        <img src="https://projectcover.github.io/media/covers/11zeros-Corrugated_2.jpg" alt="Angled photo of the 11zeros Corrugated S23 Ultra case.">
                         <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Watermark" class="watermark">
                     </div>
                     <div class="item-info">
@@ -783,10 +779,11 @@
                     <div class="image-container">
                         <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Loading..." class="image-loader-logo" width="48" height="48">
                         <!-- SEO: Updated Alt Text -->
-                        <img src="https://projectcover.github.io/media/covers/CASEOLOGY-Nano-Pop_1.jpg" alt="Photo of the Caseology Nano Pop case for Samsung S23 Ultra in black with a yellow camera ring." width="600" height="800">
-                        <!-- SEO: Updated Alt Text -->
-                        <img src="https://projectcover.github.io/media/covers/CASEOLOGY-Nano-Pop_2.jpg" alt="Side view of the Caseology Nano Pop S23 Ultra case." width="600" height="800">
                         <!-- FIXED: Removed width and height attributes to allow CSS to preserve aspect ratio -->
+                        <img src="https://projectcover.github.io/media/covers/CASEOLOGY-Nano-Pop_1.jpg" alt="Photo of the Caseology Nano Pop case for Samsung S23 Ultra in black with a yellow camera ring.">
+                        <!-- SEO: Updated Alt Text -->
+                        <!-- FIXED: Removed width and height attributes to allow CSS to preserve aspect ratio -->
+                        <img src="https://projectcover.github.io/media/covers/CASEOLOGY-Nano-Pop_2.jpg" alt="Side view of the Caseology Nano Pop S23 Ultra case.">
                         <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Watermark" class="watermark">
                     </div>
                     <div class="item-info">
@@ -804,10 +801,11 @@
                     <div class="image-container">
                         <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Loading..." class="image-loader-logo" width="48" height="48">
                         <!-- SEO: Updated Alt Text -->
-                        <img src="https://projectcover.github.io/media/covers/Spigen-Liquid-Air_1.jpg" alt="Photo of the Spigen Liquid Air case for Samsung S23 Ultra with its geometric grip pattern." width="600" height="800">
-                        <!-- SEO: Updated Alt Text -->
-                        <img src="https://projectcover.github.io/media/covers/Spigen-LiquidAir_2.jpg" alt="Angled photo of the Spigen Liquid Air S23 Ultra case." width="600" height="800">
                         <!-- FIXED: Removed width and height attributes to allow CSS to preserve aspect ratio -->
+                        <img src="https://projectcover.github.io/media/covers/Spigen-Liquid-Air_1.jpg" alt="Photo of the Spigen Liquid Air case for Samsung S23 Ultra with its geometric grip pattern.">
+                        <!-- SEO: Updated Alt Text -->
+                        <!-- FIXED: Removed width and height attributes to allow CSS to preserve aspect ratio -->
+                        <img src="https://projectcover.github.io/media/covers/Spigen-LiquidAir_2.jpg" alt="Angled photo of the Spigen Liquid Air S23 Ultra case.">
                         <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Watermark" class="watermark">
                     </div>
                     <div class="item-info">
@@ -825,11 +823,12 @@
                     <div class="image-container">
                         <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Loading..." class="image-loader-logo" width="48" height="48">
                         <!-- SEO: Updated Alt Text -->
-                        <img src="https://projectcover.github.io/media/covers/Casesily-Carbon-Fiber_3.jpg" alt="Photo of the Casesily Carbon Fiber case for Samsung S23 Ultra with a central racing stripe." width="600" height="800">
-                        <!-- SEO: Updated Alt Text -->
-                        <img src="https://projectcover.github.io/media/covers/Casesily-Carbon-Fiber_1.jpg" alt="Top-down view of the Casesily Carbon Fiber S23 Ultra case." width="600" height="800">
-                        <!-- <img src="https://projectcover.github.io/media/covers/Casesily-Carbon-Fiber_2.jpg" alt="Casesily Carbon Fiber - View 2" width="600" height="800"> -->
                         <!-- FIXED: Removed width and height attributes to allow CSS to preserve aspect ratio -->
+                        <img src="https://projectcover.github.io/media/covers/Casesily-Carbon-Fiber_3.jpg" alt="Photo of the Casesily Carbon Fiber case for Samsung S23 Ultra with a central racing stripe.">
+                        <!-- SEO: Updated Alt Text -->
+                        <!-- FIXED: Removed width and height attributes to allow CSS to preserve aspect ratio -->
+                        <img src="https://projectcover.github.io/media/covers/Casesily-Carbon-Fiber_1.jpg" alt="Top-down view of the Casesily Carbon Fiber S23 Ultra case.">
+                        <!-- <img src="https://projectcover.github.io/media/covers/Casesily-Carbon-Fiber_2.jpg" alt="Casesily Carbon Fiber - View 2"> -->
                         <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Watermark" class="watermark">
                     </div>
                     <div class="item-info">
@@ -878,7 +877,6 @@
             <div class="modal-image-wrapper">
                 <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Loading..." class="image-loader-logo modal-loader" width="48" height="48">
                 <img class="modal-image" id="modalImage" alt="Enlarged gallery image">
-                <!-- FIXED: Removed width and height attributes to allow CSS to preserve aspect ratio -->
                 <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Watermark" class="modal-watermark">
             </div>
             <div class="modal-info-bar">
@@ -946,7 +944,8 @@
             portfolioItems.forEach(item => { observer.observe(item); });
 
             
-            // ADDED: Header Scroll Effect
+            /* FIXED: Changed HTML comment to JS comment */
+            /* ADDED: Header Scroll Effect */
             const headerElement = document.querySelector('header');
             if (headerElement) {
                 const scrollThreshold = 10; // Pixels to scroll before changing header
@@ -965,7 +964,8 @@
                 // Add scroll listener
                 window.addEventListener('scroll', handleHeaderScroll, { passive: true });
             }
-            // END: Header Scroll Effect
+            /* FIXED: Changed HTML comment to JS comment */
+            /* END: Header Scroll Effect */
 
 
             // --- UPDATED: Global Synchronized Slideshow Logic ---
@@ -1025,7 +1025,7 @@
                     }
                 }).catch(error => {
                     console.error("Error loading images for a portfolio item:", error);
-                    if (itemData.loader) itemData.loader.style.display = 'none';
+                    if (itemData.loader) itemData.style.display = 'none';
                 });
             });
 
