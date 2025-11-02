@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO: Updated Title -->
+    <title>Project_Cover</title>
+
+    <!-- SEO: Updated Meta Description -->
+    <meta name="description" content="A professional photography portfolio of premium phone cases for the Samsung Galaxy S23 Ultra, featuring brands like Spigen, Caseology, and 11zeros.">
+    
+    <!-- 
+      SEO & Social Share Tags 
+      !! REPLACE 'https://your-website-url.com' WITH ACTUAL URL !! 
+    -->
+    <link rel="canonical" href="https://gautam-anurag.github.io/project_cover/" /> 
+    <meta property="og:title" content="Samsung Galaxy S23 Ultra Case Photography | Project_Cover" />
+    <meta property="og:description" content="A professional photography portfolio of premium phone cases for the Samsung Galaxy S23 Ultra." />
+    <meta property="og:image" content="https://gautam-anurag.github.io/project_cover/images/11zeros-Corrugated_2.jpg" /> 
+    <meta property="og:url" content="https://gautam-anurag.github.io/project_cover/" /> 
+    <meta property="og:type" content="website" />
+    <!-- End SEO Tags -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"></noscript>
+
+    <link rel="icon" href="resources/project_cover-icon-orange.png" type="image/x-icon">
+
+    <style>
+        /* CSS Reset and Basic Setup */
+        :root {
+            --primary-bg: #101010;
+            --secondary-bg: #1e1e1e;
+            --text-primary: #f0f0f0;
+            --text-secondary: #a0a0a0;
+            --accent-color: #FF6600;
+            --font-main: 'Inter', sans-serif;
+            --font-headings: 'Lora', serif;
+        }
+
+        /* Custom Selection Styling */
+        ::-moz-selection {
+            color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        ::selection {
+            color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--primary-bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--secondary-bg);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #2a2a2a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        body.modal-open, body.loading {
+            overflow: hidden;
+        }
+
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-bg);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.75s ease, visibility 0.75s ease;
+        }
+        #preloader.loaded {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .preloader-logo {
+            height: 4rem;
+            width: auto;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+        }
+        
+        /* Prevent Image Download */
+        img {
+            pointer-events: none;
+        }
+
+        /* Header */
+        header {
+            padding: 1rem 5%;
+            background-color: rgba(16, 16, 16, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        header img {
+            opacity: 0.85;
+            transition: opacity 0.2s ease-in-out, transform 0.3s ease;
+        }
+        header img:hover {
+            opacity: 1;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            background-image: url('resources/cover-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+        }
+        .hero-content {
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 1rem;
+        }
+        /* SEO: Use h1 for the main heading */
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            display: inline-block;
+        }
+        /* SEO: Removed opacity: 0 from p tag */
+        .hero-content p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--text-secondary);
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 5%;
+            background-color: #0c0c0c;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        .about p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        .about p:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Portfolio Gallery */
+        .portfolio {
+            padding: 6rem 5%;
+        }
+        .portfolio-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            font-weight: 700;
+        }
+        .portfolio-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5rem;
+        }
+        .portfolio-item {
+            background-color: var(--secondary-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 400px;
+            max-width: 450px;
+        }
+        .portfolio-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            background-color: #000;
+        }
+        .image-container::before {
+            content: '';
+            display: block;
+            padding-top: 133.33%;
+        }
+        .image-container img:not(.watermark):not(.image-loader-logo) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: opacity 0.8s ease-in-out;
+        }
+        .image-container .watermark {
+            position: absolute;
+            bottom: 12px;
+            left: 1.5rem;
+            transform: translateX(-50%);
+            height: 1.25rem;
+            width: auto;
+            z-index: 5;
+            opacity: 0.6;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .portfolio-item:hover .image-container .watermark {
+            opacity: 1;
+        }
+        .image-loader-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 3rem;
+            width: auto;
+            animation: pulse 2s infinite ease-in-out;
+            z-index: 10;
+        }
+        
+        /* Removed blink-caret animation as typing effect is removed */
+
+        .item-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .item-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        h3 a {
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            position: relative;
+        }
+        h3 a:hover {
+            color: var(--accent-color);
+        }
+        h3 a::after {
+            content: '→';
+            font-weight: 400;
+            display: inline-block;
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        h3 a:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .item-info p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+        .view-btn {
+            background-color: var(--text-primary);
+            color: var(--primary-bg);
+            border: 2px solid var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .view-btn svg {
+            stroke: var(--primary-bg);
+            transition: stroke 0.3s ease;
+        }
+
+        .view-btn:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.2);
+        }
+
+        .view-btn:hover svg {
+            stroke: var(--accent-color);
+        }
+
+        /* Modal / Lightbox */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 0;
+            width: 90%;
+            max-width: 600px;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-60%); opacity: 0; }
+            to { transform: translateY(-50%); opacity: 1; }
+        }
+        .modal-image-wrapper {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .modal-image {
+            width: 100%;
+            border-radius: 8px;
+            transition: opacity 0.4s ease;
+        }
+        .modal-watermark {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 1.75rem;
+            width: auto;
+            z-index: 1002;
+            opacity: 1;
+            pointer-events: none;
+        }
+        .close-btn {
+            cursor: pointer;
+            position: absolute;
+            color: var(--accent-color);
+            opacity: 0.8;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            user-select: none;
+            top: 15px;
+            right: 35px;
+            font-size: 40px;
+            z-index: 1001;
+        }
+        .close-btn:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        .modal-info-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0.5rem 0.5rem;
+        }
+        .modal-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .modal-controls button {
+            background: none;
+            border: 2px solid var(--text-secondary);
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .modal-controls button:hover {
+            color: var(--text-primary);
+            border-color: var(--text-primary);
+        }
+        #image-counter {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            min-width: 45px;
+            text-align: center;
+        }
+        #caption {
+            font-size: 1.5rem;
+            text-align: left;
+            font-weight: 700;
+        }
+        
+        /* Contact Form */
+        .contact {
+            padding: 6rem 5% 4rem;
+            background-color: var(--primary-bg);
+            min-height: calc(100vh - 5rem);
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .contact-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            font-family: var(--font-headings);
+        }
+        .contact-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+        .contact-form {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            font-family: 'Inter', sans-serif;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #333;
+            background-color: #1a1a1a;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .submit-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+        }
+        .submit-btn:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+        #form-messages {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 1rem;
+            display: none;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            line-height: 1.5;
+        }
+        #form-messages.success {
+            color: #e2e3e5;
+            background-color: #2b3035;
+            border: 1px solid #3c4248;
+        }
+        #form-messages.error {
+            color: #f8d7da;
+            background-color: #491c21;
+            border: 1px solid #5a262c;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 5%;
+            background-color: #0a0a0a;
+            border-top: 1px solid #2a2a2a;
+        }
+        footer p {
+            color: var(--text-secondary);
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            /* SEO: Use h1 for the main heading */
+            .hero-content h1 {
+                font-size: 4.5rem;
+            }
+            .modal-content {
+                max-width: 800px;
+            }
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 8px 5%;
+            }
+            /* Fix for hero background zoom on mobile scroll */
+            .hero {
+                background-attachment: scroll;
+            }
+            /* SEO: Use h1 for the main heading */
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            .close-btn {
+                font-size: 45px;
+                top: 5px;
+                right: 15px;
+            }
+        }
+    </style>
+
+    <!-- 
+      Schema.org Structured Data 
+      !! REPLACE 'https://your-website-url.com' WITH YOUR ACTUAL URL !! 
+    -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Samsung Galaxy S23 Ultra Case Photography | Project_Cover",
+      "description": "A professional photography portfolio of premium phone cases for the Samsung Galaxy S23 Ultra, featuring brands like Spigen, Caseology, and 11zeros.",
+      "url": "https://gautam-anurag.github.io/project_cover/",
+      "author": {
+        "@type": "Person",
+        "name": "Anurag Gautam"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ImageObject",
+            "position": 1,
+            "name": "11zeros Corrugated Case for S23 Ultra",
+            "description": "Photo of the 11zeros Corrugated case for Samsung S23 Ultra showing its textured black back and orange camera ring.",
+            "contentUrl": "https://gautam-anurag.github.io/project_cover/images/11zeros-Corrugated_1.jpg"
+          },
+          {
+            "@type": "ImageObject",
+            "position": 2,
+            "name": "Caseology Nano Pop Case for S23 Ultra",
+            "description": "Photo of the Caseology Nano Pop case for Samsung S23 Ultra in black with a yellow camera ring.",
+            "contentUrl": "https://gautam-anurag.github.io/project_cover/images/CASEOLOGY-Nano-Pop_1.jpg"
+          },
+          {
+            "@type": "ImageObject",
+            "position": 3,
+            "name": "Spigen Liquid Air Case for S23 Ultra",
+            "description": "Photo of the Spigen Liquid Air case for Samsung S23 Ultra with its geometric grip pattern.",
+            "contentUrl": "https://gautam-anurag.github.io/project_cover/images/Spigen-Liquid-Air_1.jpg"
+          },
+          {
+            "@type": "ImageObject",
+            "position": 4,
+            "name": "Casesily Carbon Fiber Case for S23 Ultra",
+            "description": "Photo of the Casesily Carbon Fiber case for Samsung S23 Ultra with a central racing stripe.",
+            "contentUrl": "https://gautam-anurag.github.io/project_cover/images/Casesily-Carbon-Fiber_3.jpg"
+          }
+        ]
+      }
+    }
+    </script>
+    <!-- End Schema.org -->
+
+</head>
+<body class="loading">
+
+    <div id="preloader">
+        <img src="resources/project_cover-icon-white.png" alt="Loading..." class="preloader-logo" width="64" height="64">
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <img src="resources/project_cover-icon-white.png" alt="Logo" id="header-logo" style="height: 3rem; width: auto;" width="48" height="48">
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <!-- SEO: Replaced JS-driven h2 with static h1 and p -->
+            <div class="hero-content">
+                <h1>Project_Cover</h1>
+                <p>Capturing the Details</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <div class="about-content">
+                <h2>A Passion Project</h2>
+                <p>This collection isn't just a portfolio; it's the start of a journey. As a photography enthusiast with a keen eye for product design, I've always admired brands that merge form and function seamlessly. I personally purchased and photographed each case in this collection to capture the unique story each one tells—from its texture and color to the precise way it complements the device it protects.</p>
+                <p>This project was born from a genuine appreciation for great design and a desire to bring products to life through the lens. It represents my first step into professional collaboration, driven by passion and a commitment to quality. I believe the best partnerships come from a place of mutual respect for the craft, and I'm excited to see where this path leads.</p>
+                <p>This inaugural collection focuses on the Samsung Galaxy S23 Ultra, with the S25 Ultra series coming next.</p>
+            </div>
+        </section>
+
+
+        <!-- Portfolio Gallery -->
+        <section class="portfolio">
+            <!-- SEO: More specific heading -->
+            <h2 class="portfolio-title">S23 Ultra Case Collection</h2>
+            <div class="portfolio-grid">
+                <!-- Item 1: 11zeros Corrugated -->
+                <div class="portfolio-item" data-title="11zeros - Corrugated" data-images="images/11zeros-Corrugated_1.jpg,images/11zeros-Corrugated_2.jpg">
+                    <div class="image-container">
+                        <img src="resources/project_cover-icon-white.png" alt="Loading..." class="image-loader-logo" width="48" height="48">
+                        <!-- SEO: Updated Alt Text -->
+                        <img src="images/11zeros-Corrugated_1.jpg" alt="Photo of the 11zeros Corrugated case for Samsung S23 Ultra showing its textured black back and orange camera ring." loading="lazy" width="600" height="800">
+                        <!-- SEO: Updated Alt Text -->
+                        <img src="images/11zeros-Corrugated_2.jpg" alt="Angled photo of the 11zeros Corrugated S23 Ultra case." loading="lazy" width="600" height="800">
+                        <img src="resources/project_cover-icon-white.png" alt="Watermark" class="watermark" width="60" height="20">
+                    </div>
+                    <div class="item-info">
+                        <h3><a href="https://11zeros.com/products/corrugated-pc-case?variant=49534106206514" target="_blank" rel="noopener noreferrer">11zeros - Corrugated</a></h3>
+                        <p>A bold design with a textured, industrial feel and striking orange accents.</p>
+                        <button class="view-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7h-7M17 7v7"/></svg>
+                            <span>View Gallery</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 2: Caseology Nano Pop -->
+                <div class="portfolio-item" data-title="Caseology - Nano Pop" data-images="images/CASEOLOGY-Nano-Pop_1.jpg,images/CASEOLOGY-Nano-Pop_2.jpg">
+                    <div class="image-container">
+                        <img src="resources/project_cover-icon-white.png" alt="Loading..." class="image-loader-logo" width="48" height="48">
+                        <!-- SEO: Updated Alt Text -->
+                        <img src="images/CASEOLOGY-Nano-Pop_1.jpg" alt="Photo of the Caseology Nano Pop case for Samsung S23 Ultra in black with a yellow camera ring." loading="lazy" width="600" height="800">
+                        <!-- SEO: Updated Alt Text -->
+                        <img src="images/CASEOLOGY-Nano-Pop_2.jpg" alt="Side view of the Caseology Nano Pop S23 Ultra case." loading="lazy" width="600" height="800">
+                        <img src="resources/project_cover-icon-white.png" alt="Watermark" class="watermark" width="60" height="20">
+                    </div>
+                    <div class="item-info">
+                        <h3><a href="https://www.spigen.com/pages/caseology" target="_blank" rel="noopener noreferrer">Caseology - Nano Pop</a></h3>
+                        <p>Minimalist and sleek with a smooth matte finish and a contrasting camera ring.</p>
+                        <button class="view-btn">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7h-7M17 7v7"/></svg>
+                            <span>View Gallery</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 3: Spigen Liquid Air -->
+                <div class="portfolio-item" data-title="Spigen - Liquid Air" data-images="images/Spigen-Liquid-Air_1.jpg,images/Spigen-LiquidAir_2.jpg">
+                    <div class="image-container">
+                        <img src="resources/project_cover-icon-white.png" alt="Loading..." class="image-loader-logo" width="48" height="48">
+                        <!-- SEO: Updated Alt Text -->
+                        <img src="images/Spigen-Liquid-Air_1.jpg" alt="Photo of the Spigen Liquid Air case for Samsung S23 Ultra with its geometric grip pattern." loading="lazy" width="600" height="800">
+                        <!-- SEO: Updated Alt Text -->
+                        <img src="images/Spigen-LiquidAir_2.jpg" alt="Angled photo of the Spigen Liquid Air S23 Ultra case." loading="lazy" width="600" height="800">
+                        <img src="resources/project_cover-icon-white.png" alt="Watermark" class="watermark" width="60" height="20">
+                    </div>
+                    <div class="item-info">
+                        <h3><a href="https://spigen.in/products/galaxy-s23-series-case-liquid-air" target="_blank" rel="noopener noreferrer">Spigen - Liquid Air</a></h3>
+                        <p>A slim, form-fitted case with a modern geometric pattern for enhanced grip and style.</p>
+                        <button class="view-btn">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7h-7M17 7v7"/></svg>
+                            <span>View Gallery</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Item 4: Casesily Carbon Fiber -->
+                <div class="portfolio-item" data-title="Casesily - Carbon Fiber" data-images="images/Casesily-Carbon-Fiber_3.jpg,images/Casesily-Carbon-Fiber_1.jpg,images/Casesily-Carbon-Fiber_2.jpg">
+                    <div class="image-container">
+                        <img src="resources/project_cover-icon-white.png" alt="Loading..." class="image-loader-logo" width="48" height="48">
+                        <!-- SEO: Updated Alt Text -->
+                        <img src="images/Casesily-Carbon-Fiber_3.jpg" alt="Photo of the Casesily Carbon Fiber case for Samsung S23 Ultra with a central racing stripe." loading="lazy" width="600" height="800">
+                        <!-- SEO: Updated Alt Text -->
+                        <img src="images/Casesily-Carbon-Fiber_1.jpg" alt="Top-down view of the Casesily Carbon Fiber S23 Ultra case." loading="lazy" width="600" height="800">
+                        <!-- <img src="images/Casesily-Carbon-Fiber_2.jpg" alt="Casesily Carbon Fiber - View 2" loading="lazy" width="600" height="800"> -->
+                        <img src="resources/project_cover-icon-white.png" alt="Watermark" class="watermark" width="60" height="20">
+                    </div>
+                    <div class="item-info">
+                        <h3><a href="https://www.casesily.com/products/samsung-galaxy-s23-ultra-daul-shade-carbon-fiber-aramid-kevilar-case" target="_blank" rel="noopener noreferrer">Casesily - Carbon Fiber</a></h3>
+                        <p>A classic, sophisticated look featuring a carbon fiber pattern with a central racing stripe.</p>
+                        <button class="view-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7h-7M17 7v7"/></svg>
+                            <span>View Gallery</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <h2 class="contact-title">Let's Create Together</h2>
+            <p class="contact-subtitle">If you believe your product has a story to tell, I'd be honored to help you tell it. Let's start the conversation about our first collaboration.</p>
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label for="brand-name">Your Brand's Name</label>
+                    <input type="text" id="brand-name" name="brandName" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-name">Your Name</label>
+                    <input type="text" id="contact-name" name="contactName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="project-details">Tell me about your project</label>
+                    <textarea id="project-details" name="projectDetails" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="submit-button">Let's Collaborate</button>
+                <div id="form-messages"></div>
+            </form>
+        </section>
+    </main>
+    
+    <!-- Modal / Lightbox -->
+    <div id="imageModal" class="modal">
+        <span class="close-btn" title="Close">&times;</span>
+        <div class="modal-content">
+            <div class="modal-image-wrapper">
+                <img src="resources/project_cover-icon-white.png" alt="Loading..." class="image-loader-logo modal-loader" width="48" height="48">
+                <img class="modal-image" id="modalImage" alt="Enlarged gallery image">
+                <img src="resources/project_cover-icon-white.png" alt="Watermark" class="modal-watermark" width="88" height="28">
+            </div>
+            <div class="modal-info-bar">
+                <h3 id="caption"></h3>
+                <div class="modal-controls">
+                    <button id="prevBtnModal" title="Previous Image">&#10094;</button>
+                    <span id="image-counter"></span>
+                    <button id="nextBtnModal" title="Next Image">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Website by Anurag Gautam</p>
+    </footer>
+
+    <script defer>
+        document.addEventListener("DOMContentLoaded", () => {
+             // --- PRELOADER ---
+            const preloader = document.getElementById('preloader');
+            const heroSection = document.querySelector('.hero');
+
+            const hidePreloader = () => {
+                if (!document.body.classList.contains('loading')) return;
+                document.body.classList.remove('loading');
+                preloader.classList.add('loaded');
+            };
+
+            if (preloader && heroSection) {
+                const heroStyle = window.getComputedStyle(heroSection);
+                const heroBgImage = heroStyle.backgroundImage;
+                const imageUrlMatch = heroBgImage.match(/url\("?(.+?)"?\)/);
+
+                if (imageUrlMatch && imageUrlMatch[1]) {
+                    const img = new Image();
+                    img.src = imageUrlMatch[1];
+                    img.onload = hidePreloader;
+                    img.onerror = hidePreloader;
+                } else {
+                    setTimeout(hidePreloader, 500);
+                }
+            }
+
+            // Prevent image download
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('contextmenu', e => e.preventDefault());
+            });
+
+            // SEO: Removed the JavaScript typing effect for the hero title.
+            // The h1 and p tags are now static in the HTML.
+
+            // Intersection Observer for fade-in portfolio items
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            portfolioItems.forEach(item => { observer.observe(item); });
+
+            // Card Image Loading and Slideshow Logic
+            document.querySelectorAll('.portfolio-item').forEach(item => {
+                const imageContainer = item.querySelector('.image-container');
+                if (!imageContainer) return;
+
+                const loader = imageContainer.querySelector('.image-loader-logo');
+                const images = Array.from(imageContainer.querySelectorAll('img:not(.watermark):not(.image-loader-logo)'));
+                
+                if (images.length === 0) {
+                    if(loader) loader.style.display = 'none';
+                    return;
+                }
+
+                images.forEach(img => img.style.opacity = '0');
+
+                const promises = images.map(img => {
+                    return new Promise((resolve, reject) => {
+                        if (img.complete) {
+                            resolve();
+                        } else {
+                            img.onload = resolve;
+                            img.onerror = reject;
+                        }
+                    });
+                });
+
+                Promise.all(promises).then(() => {
+                    if (loader) loader.style.display = 'none';
+                    
+                    if (images.length > 1) {
+                        let currentIndex = 0;
+                        images[currentIndex].style.opacity = '1';
+
+                        item.dataset.slideshowInterval = setInterval(() => {
+                            images[currentIndex].style.opacity = '0';
+                            currentIndex = (currentIndex + 1) % images.length;
+                            images[currentIndex].style.opacity = '1';
+                        }, 3000);
+                    } else if (images.length === 1) {
+                        images[0].style.opacity = '1';
+                    }
+                }).catch(error => {
+                    console.error("Error loading images for a portfolio item:", error);
+                    if (loader) loader.style.display = 'none';
+                });
+            });
+
+            // Modal Logic
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            const captionText = document.getElementById("caption");
+            const imageCounter = document.getElementById("image-counter");
+            const modalImageWrapper = document.querySelector('.modal-image-wrapper');
+            const closeBtn = document.querySelector(".close-btn");
+            const prevBtn = document.getElementById("prevBtnModal");
+            const nextBtn = document.getElementById("nextBtnModal");
+            const modalLoader = document.querySelector('.modal-content .image-loader-logo');
+
+            let currentImages = [];
+            let currentImageIndex = 0;
+            let touchstartX = 0;
+
+            const updateModalContent = (title) => {
+                modalLoader.style.display = 'block';
+                modalImg.style.opacity = '0';
+                captionText.style.opacity = '0';
+                
+                const imagePath = currentImages[currentImageIndex];
+                modalImg.src = imagePath;
+                
+                modalImg.onload = () => {
+                    modalLoader.style.display = 'none';
+                    modalImg.style.opacity = '1';
+                    captionText.style.opacity = '1';
+                    captionText.textContent = title;
+                    imageCounter.textContent = `${currentImageIndex + 1} / ${currentImages.length}`;
+                };
+
+                modalImg.onerror = () => {
+                    modalLoader.style.display = 'none';
+                    captionText.textContent = "Error loading image.";
+                    captionText.style.opacity = '1';
+                }
+            }
+            
+            const changeImage = (n) => {
+                currentImageIndex = (currentImageIndex + n + currentImages.length) % currentImages.length;
+                const currentItem = document.querySelector(`.portfolio-item[data-images='${currentImages.join(',')}']`);
+                if(currentItem) {
+                    updateModalContent(currentItem.dataset.title);
+                }
+            }
+
+            document.querySelectorAll('.view-btn').forEach(button => {
+                button.onclick = function() {
+                    const item = this.closest('.portfolio-item');
+                    currentImages = item.dataset.images.split(',');
+                    currentImageIndex = 0;
+                    modal.style.display = "block";
+                    document.body.classList.add("modal-open");
+                    updateModalContent(item.dataset.title);
+                }
+            });
+            
+            const handleSwipe = (touchendX) => {
+                if (touchendX < touchstartX - 50) changeImage(1);
+                if (touchendX > touchstartX + 50) changeImage(-1);
+            }
+
+            modalImageWrapper.addEventListener('touchstart', e => { touchstartX = e.changedTouches[0].screenX; }, { passive: true });
+            modalImageWrapper.addEventListener('touchend', e => { handleSwipe(e.changedTouches[0].screenX); });
+            
+            prevBtn.onclick = () => changeImage(-1);
+            nextBtn.onclick = () => changeImage(1);
+            
+            const closeModal = () => {
+                modal.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => {
+                    modal.style.display = "none";
+                    modal.style.animation = 'fadeIn 0.3s ease';
+                    document.body.classList.remove("modal-open");
+                }, 280);
+            }
+            
+            closeBtn.onclick = closeModal;
+            window.onclick = (event) => { if (event.target == modal) closeModal(); }
+            document.addEventListener('keydown', (event) => { if (event.key === "Escape") closeModal(); });
+
+
+            // Contact Form Submission Logic
+            const form = document.getElementById('contact-form');
+            const submitButton = document.getElementById('submit-button');
+            const formMessages = document.getElementById('form-messages');
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbz-nl_YhnNpm-RU930xUasXF8O38qiq92ak54ROXY2b7Oj73o2SQyDoaFBl7IF6TvoW/exec'; 
+
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending email to Project_Cover';
+                formMessages.style.display = 'none';
+
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.result === 'success') {
+                            formMessages.innerHTML = "<strong>Thank you for your message!</strong><br>We've received it and will get back to you as soon as possible.";
+                            formMessages.className = 'success';
+                            form.reset();
+                        } else {
+                            throw new Error('Project_Cover Mail API returned an error.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error!', error.message);
+                        formMessages.innerHTML = "<strong>Oops! Something went wrong.</strong><br>We couldn't send your message. Please check your connection and try again.";
+                        formMessages.className = 'error';
+                    })
+                    .finally(() => {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Let\'s Collaborate';
+                        formMessages.style.display = 'block';
+                         setTimeout(() => { formMessages.style.display = 'none'; }, 6000);
+                    });
+            });
+        });
+    </script>
+</body>
+</html>

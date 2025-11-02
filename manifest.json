@@ -1,0 +1,23 @@
+{
+  "name": "Project_Cover",
+  "short_name": "Project_Cover",
+  "description": "A photography portfolio of premium phone cases.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#101010",
+  "theme_color": "#FF6600",
+  "icons": [
+    {
+      "src": "resources/project_cover-icon-orange(192x192).png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "resources/project_cover-icon-orange(512x512).png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
