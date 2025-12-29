@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Project_Cover</title>
-
     <meta name="description" content="A professional photography portfolio of premium phone cases for the Samsung Galaxy S23 Ultra, featuring brands like Spigen, Caseology, and 11zeros.">
-    
     <link rel="canonical" href="https://projectcover.github.io/home/"/> 
     <meta property="og:title" content="Samsung Galaxy S23 Ultra Case Photography | Project_Cover" />
     <meta property="og:description" content="A professional photography portfolio of premium phone cases for the Samsung Galaxy S23 Ultra." />
@@ -16,20 +13,14 @@
     <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"></noscript>
-
     <link rel="icon" href="https://projectcover.github.io/media/brand/project_cover-icon-orange.png" type="image/png">
     <link rel="shortcut icon" href="https://projectcover.github.io/media/brand/project_cover-icon-orange(192x192).png" type="image/png">
     <link rel="apple-touch-icon" href="https://projectcover.github.io/media/brand/project_cover-icon-orange.png">
-    
     <link rel="manifest" href="manifest.json">
-    
     <meta name="theme-color" content="#000000">
-
     <style>
-        /* CSS Reset and Basic Setup */
         :root {
             --primary-bg: #101010;
             --secondary-bg: #1e1e1e;
@@ -37,14 +28,10 @@
             --text-secondary: #a0a0a0;
             --accent-color: #FF6600;
             --font-main: 'Inter', sans-serif;
-            
-            /* New Modal Specific Colors */
             --modal-bg: #000000;
             --modal-specs-bg: #121212;
             --modal-border: #222222;
         }
-
-        /* Custom Selection Styling */
         ::-moz-selection {
             color: var(--accent-color);
             background: rgba(255, 255, 255, 0.1);
@@ -53,8 +40,6 @@
             color: var(--accent-color);
             background: rgba(255, 255, 255, 0.1);
         }
-
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -68,7 +53,6 @@
         ::-webkit-scrollbar-thumb:hover {
             background-color: #2a2a2a;
         }
-
         * {
             margin: 0;
             padding: 0;
@@ -88,8 +72,6 @@
         body.modal-open, body.loading {
             overflow: hidden;
         }
-
-        /* Preloader */
         #preloader {
             position: fixed;
             top: 0;
@@ -112,18 +94,14 @@
             width: auto;
             animation: pulse 2s infinite ease-in-out;
         }
-
         @keyframes pulse {
             0% { transform: scale(1); opacity: 0.8; }
             50% { transform: scale(1.05); opacity: 1; }
             100% { transform: scale(1); opacity: 0.8; }
         }
-        
         img {
             pointer-events: none;
         }
-
-        /* Header */
         header {
             padding: 1rem 5%;
             background-color: transparent;
@@ -139,7 +117,6 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
-
         header img {
             opacity: 0.85;
             transition: opacity 0.2s ease-in-out;
@@ -152,8 +129,6 @@
             justify-content: center;
             align-items: center;
         }
-
-        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
@@ -192,8 +167,6 @@
             font-weight: 300;
             color: var(--text-secondary);
         }
-
-        /* About Section */
         .about {
             padding: 6rem 5%;
             background-color: #0c0c0c;
@@ -218,8 +191,6 @@
             line-height: 1.8;
             margin-bottom: 1.5rem;
         }
-
-        /* Portfolio Gallery */
         .portfolio {
             padding: 6rem 5%;
         }
@@ -252,12 +223,10 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* Card Hover Effect */
         .portfolio-item:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
         }
-        
         .image-container {
             position: relative;
             overflow: hidden;
@@ -303,7 +272,6 @@
             animation: pulse 2s infinite ease-in-out;
             z-index: 10;
         }
-        
         .item-info {
             padding: 1.5rem 2rem; 
             display: flex;
@@ -333,10 +301,8 @@
             margin-bottom: 2rem; 
             line-height: 1.5;
         }
-
-        /* --- Tech Specs Styling (Updated for Pure Black Modal) --- */
         .cover-details-box {
-            background-color: var(--modal-specs-bg); /* Dark Grey #121212 */
+            background-color: var(--modal-specs-bg);
             border: 1px solid var(--modal-border);
             border-radius: 8px;
             padding: 1.5rem;
@@ -374,8 +340,6 @@
             color: var(--text-primary);
             margin-right: 1rem;
         }
-
-
         .view-btn {
             background-color: transparent;
             color: var(--text-primary);
@@ -393,24 +357,19 @@
             gap: 0.5rem;
             margin-top: auto;
         }
-        
         .view-btn svg {
             stroke: var(--text-primary);
             transition: stroke 0.3s ease;
         }
-
         .view-btn:hover {
             background-color: var(--text-primary);
             color: var(--primary-bg);
             border-color: var(--text-primary);
             transform: translateY(-2px);
         }
-
         .view-btn:hover svg {
             stroke: var(--primary-bg);
         }
-
-        /* --- MODAL STYLES --- */
         .modal {
             display: none;
             position: fixed;
@@ -419,23 +378,21 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: var(--modal-bg); /* Pure Black */
+            background-color: var(--modal-bg);
             animation: fadeIn 0.3s ease;
             overflow: hidden; 
         }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
         .modal-content.split-layout {
             position: relative;
             width: 100%;
             height: 100%;
             max-width: none;
             margin: 0;
-            background-color: var(--modal-bg); /* Pure Black */
+            background-color: var(--modal-bg);
             display: flex; 
             flex-direction: row;
             overflow: hidden;
@@ -443,13 +400,10 @@
             border: none;
             border-radius: 0;
         }
-
         @keyframes slideIn {
             from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-
-        /* LEFT PANE (Images) */
         .modal-pane-left {
             flex: 1.5; 
             background-color: #000;
@@ -459,7 +413,6 @@
             justify-content: center;
             height: 100%;
         }
-
         .modal-image-wrapper {
             width: 100%;
             height: 100%;
@@ -468,7 +421,6 @@
             justify-content: center;
             position: relative;
         }
-
         .modal-image {
             max-width: 100%;
             max-height: 100%;
@@ -477,7 +429,6 @@
             object-fit: contain;
             transition: opacity 0.4s ease;
         }
-
         .modal-watermark {
             position: absolute;
             bottom: 20px;
@@ -489,8 +440,6 @@
             opacity: 0.8;
             pointer-events: none;
         }
-
-        /* Controls overlay */
         .modal-image-controls {
             position: absolute;
             top: 0;
@@ -503,7 +452,6 @@
             pointer-events: none;
             padding: 0 1rem;
         }
-
         .nav-btn {
             pointer-events: auto;
             background: rgba(30, 30, 30, 0.6);
@@ -524,18 +472,15 @@
             background: var(--accent-color);
             border-color: var(--accent-color);
         }
-
-        /* RIGHT PANE (Text) - Now Pure Black */
         .modal-pane-right {
             flex: 1; 
             padding: 4rem 3rem 3rem 3rem; 
             overflow-y: auto; 
-            background-color: var(--modal-bg); /* Pure Black */
+            background-color: var(--modal-bg);
             display: flex;
             flex-direction: column;
-            border-left: 1px solid var(--modal-border); /* Subtle dark border */
+            border-left: 1px solid var(--modal-border);
         }
-
         .modal-header-section {
             border-bottom: 1px solid var(--modal-border);
             padding-bottom: 1.5rem;
@@ -544,7 +489,6 @@
             justify-content: space-between;
             align-items: flex-start;
         }
-
         .modal-header-section h3 {
             font-size: 2rem;
             color: var(--text-primary);
@@ -552,8 +496,6 @@
             line-height: 1.2;
             margin: 0;
         }
-
-        /* Typography for the injected text */
         .modal-text-body {
             color: var(--text-secondary);
             font-size: 1.1rem; 
@@ -586,8 +528,6 @@
         .modal-text-body strong {
             color: var(--text-primary);
         }
-
-        /* Close Button */
         .close-btn {
             position: absolute;
             top: 20px;
@@ -604,8 +544,6 @@
             color: var(--accent-color);
             transform: rotate(90deg);
         }
-
-        /* Contact Form */
         .contact {
             padding: 6rem 5% 4rem;
             background-color: var(--primary-bg);
@@ -696,8 +634,6 @@
             background-color: #491c21;
             border: 1px solid #5a262c;
         }
-
-        /* Footer */
         footer {
             text-align: center;
             padding: 2rem 5%;
@@ -707,13 +643,9 @@
         footer p {
             color: var(--text-secondary);
         }
-
-        /* Responsive Design */
         @media (min-width: 768px) {
             .hero-content h1 { font-size: 4.5rem; }
         }
-        
-        /* Mobile Modal Layout */
         @media (max-width: 900px) {
             .modal-content.split-layout {
                 flex-direction: column;
@@ -724,17 +656,14 @@
                 overflow-y: auto;
                 border: none;
             }
-
             .modal-pane-left {
                 flex: none;
                 height: 55vh;
                 width: 100%;
-                /* FIXED: Removed sticky so the image scrolls up normally */
                 position: relative; 
                 z-index: 2;
                 border-bottom: 1px solid #333;
             }
-
             .modal-pane-right {
                 flex: none;
                 height: auto;
@@ -743,7 +672,6 @@
                 overflow-y: visible;
                 border-left: none;
             }
-
             .close-btn {
                 top: 15px;
                 right: 15px;
@@ -757,13 +685,10 @@
                 font-size: 28px;
                 backdrop-filter: blur(4px);
             }
-            
             .modal-header-section h3 { font-size: 1.5rem; }
         }
-
         header nav a img { display: block; }
     </style>
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -794,14 +719,11 @@
       }
     }
     </script>
-
 </head>
 <body class="loading">
-
     <div id="preloader">
         <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Loading..." class="preloader-logo" width="64" height="64">
     </div>
-
     <header>
         <nav>
             <a href="https://projectcover.github.io/home/">
@@ -809,7 +731,6 @@
             </a>
         </nav>
     </header>
-
     <main>
         <section class="hero">
             <div class="hero-content">
@@ -817,7 +738,6 @@
                 <p>Capturing the Details</p>
             </div>
         </section>
-
         <section class="about">
             <div class="about-content">
                 <h2>A Passion Project</h2>
@@ -826,11 +746,9 @@
                 <p>This inaugural collection focuses on the Samsung Galaxy S23 Ultra, with the S25 Ultra series coming next.</p>
             </div>
         </section>
-
         <section class="portfolio">
             <h2 class="portfolio-title">S23 Ultra Case Collection</h2>
             <div class="portfolio-grid">
-                
                 <div class="portfolio-item" data-title="11zeros - Corrugated" data-images="https://projectcover.github.io/media/covers/11zeros-Corrugated_1.jpg,https://projectcover.github.io/media/covers/11zeros-Corrugated_2.jpg">
                     <div class="image-container">
                         <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Loading..." class="image-loader-logo" width="48" height="48">
@@ -841,18 +759,15 @@
                     <div class="item-info">
                         <h3><a href="https://11zeros.com/products/corrugated-pc-case?variant=49534106206514" target="_blank" rel="noopener noreferrer">11zeros - Corrugated</a></h3>
                         <p>A bold design with a textured, industrial feel.</p>
-                        
                         <button class="view-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7h-7M17 7v7"/></svg>
                             <span>View Gallery</span>
                         </button>
                     </div>
-
                     <div class="hidden-content" style="display: none;">
                         <h2>The Industrial Aesthetic</h2>
                         <p>The 11zeros Corrugated case isn't just about protection; it's about tactile feedback. Inspired by shipping containers and industrial architecture, the back panel features deep, 3D corrugated ridges that catch the light and create distinct shadows.</p>
                         <p>These ridges provide an unmatched grip, ensuring the massive S23 Ultra stays firmly in your hand. The contrasting orange camera ring adds a streetwear aesthetic that pops against the matte black finish, making it a statement piece.</p>
-                        
                         <div class="cover-details-box">
                             <h4>Tech Specs</h4>
                             <ul>
@@ -861,7 +776,6 @@
                                 <li><span class="detail-label">Style</span> Industrial w/ Orange Accent</li>
                             </ul>
                         </div>
-
                         <h3>Key Features</h3>
                         <ul>
                             <li><strong>Tactile Grip:</strong> The 3D ridges prevent slips.</li>
@@ -870,7 +784,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="portfolio-item" data-title="Caseology - Nano Pop" data-images="https://projectcover.github.io/media/covers/CASEOLOGY-Nano-Pop_1.jpg,https://projectcover.github.io/media/covers/CASEOLOGY-Nano-Pop_2.jpg">
                     <div class="image-container">
                         <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Loading..." class="image-loader-logo" width="48" height="48">
@@ -886,12 +799,10 @@
                             <span>View Gallery</span>
                         </button>
                     </div>
-
                      <div class="hidden-content" style="display: none;">
                         <h2>Bold & Minimal</h2>
                         <p>The Caseology Nano Pop is inspired by the dual-color visuals of fresh fruit. It strikes a balance between playfulness and professionalism. The silicone feel is soft to the touch but attracts less lint than traditional silicone cases.</p>
                         <p>The yellow "Pop" around the camera module highlights the S23 Ultra's most powerful feature, while the "Black Sesame" body keeps the overall look grounded.</p>
-                        
                         <div class="cover-details-box">
                             <h4>Tech Specs</h4>
                             <ul>
@@ -900,7 +811,6 @@
                                 <li><span class="detail-label">Style</span> Two-Tone Minimalist</li>
                             </ul>
                         </div>
-
                         <h3>Design Highlights</h3>
                         <ul>
                             <li><strong>Soft-Touch Finish:</strong> Feels premium in the hand.</li>
@@ -909,7 +819,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="portfolio-item" data-title="Spigen - Liquid Air" data-images="https://projectcover.github.io/media/covers/Spigen-Liquid-Air_1.jpg,https://projectcover.github.io/media/covers/Spigen-LiquidAir_2.jpg">
                     <div class="image-container">
                         <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Loading..." class="image-loader-logo" width="48" height="48">
@@ -925,12 +834,10 @@
                             <span>View Gallery</span>
                         </button>
                     </div>
-
                     <div class="hidden-content" style="display: none;">
                         <h2>The Modern Classic</h2>
                         <p>Spigen's Liquid Air has become a staple for a reason. It features a signature geometric pattern engraved into the back that serves two purposes: it repels fingerprints and provides a secure, non-slip grip.</p>
                         <p>Despite being incredibly thin, it utilizes Spigen's "Air Cushion Technology" in the corners to absorb shock from drops, making it the perfect daily driver for those who hate bulky cases.</p>
-                        
                         <div class="cover-details-box">
                             <h4>Tech Specs</h4>
                             <ul>
@@ -939,7 +846,6 @@
                                 <li><span class="detail-label">Style</span> Slim Profile</li>
                             </ul>
                         </div>
-
                         <h3>Technical Details</h3>
                         <ul>
                             <li><strong>Air Cushion Tech:</strong> Military-grade drop protection.</li>
@@ -948,7 +854,6 @@
                         </ul>
                     </div>
                 </div>
-                
                 <div class="portfolio-item" data-title="Casesily - Carbon Fiber" data-images="https://projectcover.github.io/media/covers/Casesily-Carbon-Fiber_3.jpg,https://projectcover.github.io/media/covers/Casesily-Carbon-Fiber_1.jpg,https://projectcover.github.io/media/covers/Casesily-Carbon-Fiber_2.jpg">
                     <div class="image-container">
                         <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Loading..." class="image-loader-logo" width="48" height="48">
@@ -964,12 +869,10 @@
                             <span>View Gallery</span>
                         </button>
                     </div>
-
                      <div class="hidden-content" style="display: none;">
                         <h2>High-End Materiality</h2>
                         <p>This case utilizes Aramid Fiber (often referred to as Kevlar), a material used in aerospace and body armor. It is exceptionally strong yet lighter than plastic. The weave pattern reflects light in a unique way, giving it a premium sheen.</p>
                         <p>The "Racing Stripe" down the center breaks up the pattern, adding a sense of speed and motion to the design. It is incredibly thin, almost feeling like part of the phone itself.</p>
-                        
                         <div class="cover-details-box">
                             <h4>Tech Specs</h4>
                             <ul>
@@ -978,7 +881,6 @@
                                 <li><span class="detail-label">Style</span> Racing Stripe Pattern</li>
                             </ul>
                         </div>
-
                         <h3>Material Benefits</h3>
                         <ul>
                             <li><strong>Ultra-Thin:</strong> 0.6mm thickness.</li>
@@ -989,7 +891,6 @@
                 </div>
             </div>
         </section>
-
         <section class="contact">
             <h2 class="contact-title">Let's Create Together</h2>
             <p class="contact-subtitle">If you believe your product has a story to tell, I'd be honored to help you tell it. Let's start the conversation about our first collaboration.</p>
@@ -1015,66 +916,52 @@
             </form>
         </section>
     </main>
-    
     <div id="imageModal" class="modal">
         <span class="close-btn" title="Close">&times;</span>
-        
         <div class="modal-content split-layout">
-            
             <div class="modal-pane-left">
                 <div class="modal-image-wrapper">
                     <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Loading..." class="image-loader-logo modal-loader" width="48" height="48">
                     <img class="modal-image" id="modalImage" alt="Enlarged gallery image">
                     <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Watermark" class="modal-watermark">
-                    
                     <div class="modal-image-controls">
                         <button id="prevBtnModal" class="nav-btn">&#10094;</button>
                         <button id="nextBtnModal" class="nav-btn">&#10095;</button>
                     </div>
                 </div>
             </div>
-
             <div class="modal-pane-right">
                 <div class="modal-header-section">
                     <h3 id="caption">Project Title</h3>
                 </div>
-                
                 <div id="modal-text-body" class="modal-text-body">
                     <p>Select a project to view details.</p>
                 </div>
-                
                 <div style="margin-top: auto; padding-top: 2rem;">
                     <a id="modal-store-link" href="#" target="_blank" class="view-btn" style="text-decoration: none;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         <span>Visit Store Page</span>
                     </a>
                 </div>
-
             </div>
         </div>
     </div>
-
     <footer>
         <p>Website by Anurag Gautam</p>
     </footer>
-
     <script defer>
         document.addEventListener("DOMContentLoaded", () => {
-             // --- PRELOADER ---
             const preloader = document.getElementById('preloader');
             const heroSection = document.querySelector('.hero');
-
             const hidePreloader = () => {
                 if (!document.body.classList.contains('loading')) return;
                 document.body.classList.remove('loading');
                 preloader.classList.add('loaded');
             };
-
             if (preloader && heroSection) {
                 const heroStyle = window.getComputedStyle(heroSection);
                 const heroBgImage = heroStyle.backgroundImage;
                 const imageUrlMatch = heroBgImage.match(/url\("?(.+?)"?\)/);
-
                 if (imageUrlMatch && imageUrlMatch[1]) {
                     const img = new Image();
                     img.src = imageUrlMatch[1];
@@ -1084,13 +971,9 @@
                     setTimeout(hidePreloader, 500);
                 }
             }
-
-            // Prevent image download
             document.querySelectorAll('img').forEach(img => {
                 img.addEventListener('contextmenu', e => e.preventDefault());
             });
-
-            // Intersection Observer
             const portfolioItems = document.querySelectorAll('.portfolio-item');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -1100,11 +983,7 @@
                     }
                 });
             }, { threshold: 0.1 });
-
             portfolioItems.forEach(item => { observer.observe(item); });
-
-            
-            // Header Scroll Effect
             const headerElement = document.querySelector('header');
             if (headerElement) {
                 const handleHeaderScroll = () => {
@@ -1117,24 +996,17 @@
                 handleHeaderScroll();
                 window.addEventListener('scroll', handleHeaderScroll, { passive: true });
             }
-
-            // --- Slideshow Logic (On Cards) ---
             const allSlideshows = [];
             let globalSlideshowInterval = null;
             const items = document.querySelectorAll('.portfolio-item');
             const allItemsPromises = []; 
-
             items.forEach(item => {
                 const imageContainer = item.querySelector('.image-container');
                 if (!imageContainer) return;
-
                 const loader = imageContainer.querySelector('.image-loader-logo');
                 const images = Array.from(imageContainer.querySelectorAll('img:not(.watermark):not(.image-loader-logo)'));
-                
                 if (images.length === 0) return;
-
                 images.forEach(img => img.style.opacity = '0');
-
                 const itemData = { images: images, loader: loader, currentIndex: 0 };
                 const itemImagePromises = images.map(img => {
                     return new Promise((resolve) => {
@@ -1142,7 +1014,6 @@
                         else { img.onload = resolve; img.onerror = resolve; }
                     });
                 });
-
                 allItemsPromises.push(Promise.all(itemImagePromises).then(() => {
                     if (itemData.loader) itemData.loader.style.display = 'none';
                     if (itemData.images.length > 0) {
@@ -1151,7 +1022,6 @@
                     }
                 }));
             });
-
             Promise.all(allItemsPromises).then(() => {
                 if (allSlideshows.length > 0 && !globalSlideshowInterval) {
                     globalSlideshowInterval = setInterval(() => {
@@ -1163,94 +1033,67 @@
                     }, 3000);
                 }
             });
-            
-
-            // --- SPLIT MODAL LOGIC ---
             const modal = document.getElementById("imageModal");
             const modalImg = document.getElementById("modalImage");
             const captionText = document.getElementById("caption");
             const modalBody = document.getElementById("modal-text-body");
-
             const modalImageWrapper = document.querySelector('.modal-image-wrapper');
             const closeBtn = document.querySelector(".close-btn");
             const prevBtn = document.getElementById("prevBtnModal");
             const nextBtn = document.getElementById("nextBtnModal");
             const modalLoader = document.querySelector('.modal-loader');
-            
             const modalStoreLink = document.getElementById("modal-store-link");
-
             let currentImages = [];
             let currentImageIndex = 0;
             let touchstartX = 0;
-
             const updateModalContent = (title, originItem) => {
                 modalLoader.style.display = 'block';
                 modalImg.style.opacity = '0';
-                
-                // 1. Set Image
                 modalImg.src = currentImages[currentImageIndex];
-                
-                // 2. Set Text Header
                 captionText.textContent = title;
-
-                // 3. Set Text Body (From hidden div) and Store Link
                 if (originItem) {
                     const hiddenContent = originItem.querySelector('.hidden-content');
                     if (hiddenContent) {
                         modalBody.innerHTML = hiddenContent.innerHTML;
-                        modalBody.scrollTop = 0; // Reset scroll to top
+                        modalBody.scrollTop = 0;
                     }
-                    
                     const storeAnchor = originItem.querySelector('h3 a');
                     if (storeAnchor && modalStoreLink) {
                         modalStoreLink.href = storeAnchor.getAttribute('href');
                     }
                 }
-
                 modalImg.onload = () => {
                     modalLoader.style.display = 'none';
                     modalImg.style.opacity = '1';
                 };
             }
-
             const changeImage = (n) => {
                 currentImageIndex = (currentImageIndex + n + currentImages.length) % currentImages.length;
-                
                 modalImg.style.opacity = '0';
-                
                 setTimeout(() => {
                     modalImg.src = currentImages[currentImageIndex];
                     modalImg.onload = () => { modalImg.style.opacity = '1'; };
                 }, 200);
             }
-
             document.querySelectorAll('.view-btn').forEach(button => {
                 button.onclick = function(e) {
                     if (this.tagName === 'A') return; 
-
                     const item = this.closest('.portfolio-item');
                     currentImages = item.dataset.images.split(',');
                     currentImageIndex = 0;
-                    
                     modal.style.display = "block";
                     document.body.classList.add("modal-open");
-                    
                     updateModalContent(item.dataset.title, item);
                 }
             });
-            
-            // Swipe support for Modal Image
             const handleSwipe = (touchendX) => {
                 if (touchendX < touchstartX - 50) changeImage(1);
                 if (touchendX > touchstartX + 50) changeImage(-1);
             }
-
             modalImageWrapper.addEventListener('touchstart', e => { touchstartX = e.changedTouches[0].screenX; }, { passive: true });
             modalImageWrapper.addEventListener('touchend', e => { handleSwipe(e.changedTouches[0].screenX); });
-            
             prevBtn.onclick = () => changeImage(-1);
             nextBtn.onclick = () => changeImage(1);
-            
             const closeModal = () => {
                 modal.style.animation = 'fadeOut 0.3s ease';
                 setTimeout(() => {
@@ -1259,24 +1102,18 @@
                     document.body.classList.remove("modal-open");
                 }, 280);
             }
-            
             closeBtn.onclick = closeModal;
             window.onclick = (event) => { if (event.target == modal) closeModal(); }
             document.addEventListener('keydown', (event) => { if (event.key === "Escape") closeModal(); });
-
-
-            // Contact Form Submission
             const form = document.getElementById('contact-form');
             const submitButton = document.getElementById('submit-button');
             const formMessages = document.getElementById('form-messages');
             const scriptURL = 'https://script.google.com/macros/s/AKfycbz-nl_YhnNpm-RU930xUasXF8O38qiq92ak54ROXY2b7Oj73o2SQyDoaFBl7IF6TvoW/exec'; 
-
             form.addEventListener('submit', e => {
                 e.preventDefault();
                 submitButton.disabled = true;
                 submitButton.textContent = 'Sending...';
                 formMessages.style.display = 'none';
-
                 fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                     .then(response => response.json())
                     .then(data => {
