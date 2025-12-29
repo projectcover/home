@@ -22,13 +22,16 @@
     <meta name="theme-color" content="#000000">
     <style>
         :root {
-            --primary-bg: #101010;
+            /* CHANGED: Primary background is now Pure Black */
+            --primary-bg: #000000; 
+            /* KEPT: Secondary background (Portfolio Items) remains #1e1e1e */
             --secondary-bg: #1e1e1e;
             --text-primary: #f0f0f0;
             --text-secondary: #a0a0a0;
             --accent-color: #FF6600;
             --font-main: 'Inter', sans-serif;
             --modal-bg: #000000;
+            /* KEPT: Specs background remains #121212 */
             --modal-specs-bg: #121212;
             --modal-border: #222222;
         }
@@ -113,7 +116,8 @@
             transition: background-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
         }
         header.scrolled {
-            background-color: rgba(16, 16, 16, 0.8);
+            /* CHANGED: Scrolled header is now Pure Black with opacity */
+            background-color: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
@@ -169,7 +173,8 @@
         }
         .about {
             padding: 6rem 5%;
-            background-color: #0c0c0c;
+            /* CHANGED: About section matches primary background (Pure Black) */
+            background-color: var(--primary-bg);
             text-align: center;
             min-height: 100vh;
             display: flex;
@@ -409,13 +414,20 @@
             background-color: #000;
             position: relative;
             display: flex;
+            flex-direction: column; 
             align-items: center;
             justify-content: center;
             height: 100%;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
         }
         .modal-image-wrapper {
             width: 100%;
-            height: 100%;
+            height: auto;
+            flex: 1; 
+            min-height: 0; 
             display: flex;
             align-items: center;
             justify-content: center;
@@ -440,38 +452,6 @@
             opacity: 0.8;
             pointer-events: none;
         }
-        .modal-image-controls {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            pointer-events: none;
-            padding: 0 1rem;
-        }
-        .nav-btn {
-            pointer-events: auto;
-            background: rgba(30, 30, 30, 0.6);
-            color: white;
-            border: 1px solid rgba(255,255,255,0.1);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(4px);
-        }
-        .nav-btn:hover {
-            background: var(--accent-color);
-            border-color: var(--accent-color);
-        }
         .modal-pane-right {
             flex: 1; 
             padding: 4rem 3rem 3rem 3rem; 
@@ -486,8 +466,8 @@
             padding-bottom: 1.5rem;
             margin-bottom: 2rem;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            flex-direction: column; 
+            gap: 1rem;
         }
         .modal-header-section h3 {
             font-size: 2rem;
@@ -495,6 +475,41 @@
             font-weight: 700;
             line-height: 1.2;
             margin: 0;
+        }
+        .modal-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            z-index: 10;
+        }
+        .modal-controls button {
+            background: none;
+            border: 2px solid var(--text-secondary);
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .modal-controls button:hover {
+            color: var(--text-primary);
+            border-color: var(--text-primary);
+            background: rgba(255,255,255,0.1);
+        }
+        #image-counter {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            min-width: 45px;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
         .modal-text-body {
             color: var(--text-secondary);
@@ -637,7 +652,8 @@
         footer {
             text-align: center;
             padding: 2rem 5%;
-            background-color: #0a0a0a;
+            /* CHANGED: Footer background is now Pure Black */
+            background-color: var(--primary-bg);
             border-top: 1px solid #2a2a2a;
         }
         footer p {
@@ -658,11 +674,16 @@
             }
             .modal-pane-left {
                 flex: none;
-                height: 55vh;
+                height: 60vh; 
                 width: 100%;
                 position: relative; 
                 z-index: 2;
                 border-bottom: 1px solid #333;
+                padding: 1rem; 
+            }
+            .modal-image-wrapper {
+                flex: 1; 
+                min-height: 0; 
             }
             .modal-pane-right {
                 flex: none;
@@ -924,10 +945,11 @@
                     <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Loading..." class="image-loader-logo modal-loader" width="48" height="48">
                     <img class="modal-image" id="modalImage" alt="Enlarged gallery image">
                     <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Watermark" class="modal-watermark">
-                    <div class="modal-image-controls">
-                        <button id="prevBtnModal" class="nav-btn">&#10094;</button>
-                        <button id="nextBtnModal" class="nav-btn">&#10095;</button>
-                    </div>
+                </div>
+                <div class="modal-controls">
+                    <button id="prevBtnModal">&#10094;</button>
+                    <span id="image-counter">1 / 1</span>
+                    <button id="nextBtnModal">&#10095;</button>
                 </div>
             </div>
             <div class="modal-pane-right">
@@ -1037,6 +1059,7 @@
             const modalImg = document.getElementById("modalImage");
             const captionText = document.getElementById("caption");
             const modalBody = document.getElementById("modal-text-body");
+            const imageCounter = document.getElementById("image-counter"); 
             const modalImageWrapper = document.querySelector('.modal-image-wrapper');
             const closeBtn = document.querySelector(".close-btn");
             const prevBtn = document.getElementById("prevBtnModal");
@@ -1051,6 +1074,7 @@
                 modalImg.style.opacity = '0';
                 modalImg.src = currentImages[currentImageIndex];
                 captionText.textContent = title;
+                imageCounter.textContent = (currentImageIndex + 1) + " / " + currentImages.length;
                 if (originItem) {
                     const hiddenContent = originItem.querySelector('.hidden-content');
                     if (hiddenContent) {
@@ -1070,6 +1094,7 @@
             const changeImage = (n) => {
                 currentImageIndex = (currentImageIndex + n + currentImages.length) % currentImages.length;
                 modalImg.style.opacity = '0';
+                imageCounter.textContent = (currentImageIndex + 1) + " / " + currentImages.length;
                 setTimeout(() => {
                     modalImg.src = currentImages[currentImageIndex];
                     modalImg.onload = () => { modalImg.style.opacity = '1'; };
