@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project_Cover</title>
     <meta name="description" content="A professional photography portfolio of premium phone cases for the Samsung Galaxy S23 Ultra, featuring brands like Spigen, Caseology, and 11zeros.">
-    <link rel="canonical" href="https://projectcover.github.io/home/"/> 
-    <meta property="og:title" content="Samsung Galaxy S23 Ultra Case Photography | Project_Cover" />
-    <meta property="og:description" content="A professional photography portfolio of premium phone cases for the Samsung Galaxy S23 Ultra." />
-    <meta property="og:image" content="https://projectcover.github.io/media/covers/11zeros-Corrugated_2.jpg" /> 
-    <meta property="og:url" content="https://projectcover.github.io/home/" /> 
-    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://projectcover.github.io/home/">
+    <meta property="og:title" content="Samsung Galaxy S23 Ultra Case Photography | Project_Cover">
+    <meta property="og:description" content="A professional photography portfolio of premium phone cases for the Samsung Galaxy S23 Ultra.">
+    <meta property="og:image" content="https://projectcover.github.io/media/covers/11zeros-Corrugated_2.jpg">
+    <meta property="og:url" content="https://projectcover.github.io/home/">
+    <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -22,7 +22,7 @@
     <meta name="theme-color" content="#000000">
     <style>
         :root {
-            --primary-bg: #000000; 
+            --primary-bg: #000000;
             --secondary-bg: #1e1e1e;
             --text-primary: #f0f0f0;
             --text-secondary: #a0a0a0;
@@ -245,7 +245,7 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: opacity 0.8s ease-in-out; 
+            transition: opacity 0.8s ease-in-out;
         }
         .image-container .watermark {
             position: absolute;
@@ -273,7 +273,7 @@
             z-index: 10;
         }
         .item-info {
-            padding: 1.5rem 2rem; 
+            padding: 1.5rem 2rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -298,7 +298,7 @@
         .item-info p {
             font-size: 1rem;
             color: var(--text-secondary);
-            margin-bottom: 2rem; 
+            margin-bottom: 2rem;
             line-height: 1.5;
         }
         .cover-details-box {
@@ -343,7 +343,7 @@
         .view-btn {
             background-color: transparent;
             color: var(--text-primary);
-            border: 1px solid #444; 
+            border: 1px solid #444;
             padding: 0.75rem 1.5rem;
             border-radius: 8px;
             cursor: pointer;
@@ -380,7 +380,7 @@
             height: 100%;
             background-color: var(--modal-bg);
             animation: fadeIn 0.3s ease;
-            overflow: hidden; 
+            overflow: hidden;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -393,7 +393,7 @@
             max-width: none;
             margin: 0;
             background-color: var(--modal-bg);
-            display: flex; 
+            display: flex;
             flex-direction: row;
             overflow: hidden;
             animation: slideIn 0.3s ease;
@@ -405,11 +405,11 @@
             to { transform: translateY(0); opacity: 1; }
         }
         .modal-pane-left {
-            flex: 1.5; 
+            flex: 1.5;
             background-color: #000;
             position: relative;
             display: flex;
-            flex-direction: column; 
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100%;
@@ -418,11 +418,27 @@
             padding-top: 1rem;
             padding-bottom: 1rem;
         }
+        .modal-project-branding {
+            position: absolute;
+            top: 1.6rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: none;
+            letter-spacing: normal;
+            z-index: 20;
+            pointer-events: none;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            opacity: 1;
+        }
         .modal-image-wrapper {
             width: 100%;
             height: auto;
-            flex: 1; 
-            min-height: 0; 
+            flex: 1;
+            min-height: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -448,9 +464,9 @@
             pointer-events: none;
         }
         .modal-pane-right {
-            flex: 1; 
-            padding: 4rem 3rem 3rem 3rem; 
-            overflow-y: auto; 
+            flex: 1;
+            padding: 4rem 3rem 3rem 3rem;
+            overflow-y: auto;
             background-color: var(--modal-bg);
             display: flex;
             flex-direction: column;
@@ -461,7 +477,7 @@
             padding-bottom: 1.5rem;
             margin-bottom: 2rem;
             display: flex;
-            flex-direction: column; 
+            flex-direction: column;
             gap: 1rem;
         }
         .modal-header-section h3 {
@@ -508,7 +524,7 @@
         }
         .modal-text-body {
             color: var(--text-secondary);
-            font-size: 1.1rem; 
+            font-size: 1.1rem;
             line-height: 1.8;
         }
         .modal-text-body h2 {
@@ -668,16 +684,16 @@
             }
             .modal-pane-left {
                 flex: none;
-                height: 60vh; 
+                height: 60vh;
                 width: 100%;
-                position: relative; 
+                position: relative;
                 z-index: 2;
                 border-bottom: 1px solid #333;
-                padding: 1rem; 
+                padding: 1rem;
             }
             .modal-image-wrapper {
-                flex: 1; 
-                min-height: 0; 
+                flex: 1;
+                min-height: 0;
             }
             .modal-pane-right {
                 flex: none;
@@ -814,16 +830,16 @@
                             <span>View Details</span>
                         </button>
                     </div>
-                     <div class="hidden-content" style="display: none;">
-                        <h2>Bold & Minimal</h2>
-                        <p>The Caseology Nano Pop is inspired by the dual-color visuals of fresh fruit. It strikes a balance between playfulness and professionalism. The silicone feel is soft to the touch but attracts less lint than traditional silicone cases.</p>
-                        <p>The yellow "Pop" around the camera module highlights the S23 Ultra's most powerful feature, while the "Black Sesame" body keeps the overall look grounded.</p>
+                    <div class="hidden-content" style="display: none;">
+                        <h2>Bold & Stealthy</h2>
+                        <p>The Caseology Nano Pop features a bold, two-tone design that strikes a perfect balance between sleek modernism and professionalism. The silicone feel is soft to the touch but attracts less lint than traditional silicone cases.</p>
+                        <p>The dark grey accent around the camera module highlights the S23 Ultra's most powerful feature, while the "Black Sesame" body keeps the overall look grounded and stealthy.</p>
                         <div class="cover-details-box">
                             <h4>Tech Specs</h4>
                             <ul>
                                 <li><span class="detail-label">Material</span> Silicone / TPU</li>
                                 <li><span class="detail-label">Texture</span> Soft-Touch Matte</li>
-                                <li><span class="detail-label">Style</span> Two-Tone Minimalist</li>
+                                <li><span class="detail-label">Style</span> Two-Tone Monochrome</li>
                             </ul>
                         </div>
                         <h3>Design Highlights</h3>
@@ -885,22 +901,22 @@
                         </button>
                     </div>
                      <div class="hidden-content" style="display: none;">
-                        <h2>High-End Materiality</h2>
-                        <p>This case utilizes Aramid Fiber (often referred to as Kevlar), a material used in aerospace and body armor. It is exceptionally strong yet lighter than plastic. The weave pattern reflects light in a unique way, giving it a premium sheen.</p>
-                        <p>The "Racing Stripe" down the center breaks up the pattern, adding a sense of speed and motion to the design. It is incredibly thin, almost feeling like part of the phone itself.</p>
+                        <h2>High-End Aesthetics</h2>
+                        <p>This case captures the sophisticated look of Aramid Fiber in a lightweight profile. It features a precision-textured back that replicates the premium weave pattern, reflecting light to give it a high-end sheen.</p>
+                        <p>The "Racing Stripe" down the center breaks up the pattern, adding a sense of speed and motion to the design. It offers the distinct visual appeal and hand-feel of carbon fiber, maintaining a slim profile that feels like part of the phone itself.</p>
                         <div class="cover-details-box">
                             <h4>Tech Specs</h4>
                             <ul>
-                                <li><span class="detail-label">Material</span> Aramid Fiber</li>
+                                <li><span class="detail-label">Material</span> Composite (Carbon Texture)</li>
                                 <li><span class="detail-label">Texture</span> Smooth Woven Feel</li>
                                 <li><span class="detail-label">Style</span> Racing Stripe Pattern</li>
                             </ul>
                         </div>
-                        <h3>Material Benefits</h3>
+                        <h3>Design Benefits</h3>
                         <ul>
-                            <li><strong>Ultra-Thin:</strong> 0.6mm thickness.</li>
-                            <li><strong>Scratch Resistant:</strong> High durability against keys and coins.</li>
-                            <li><strong>Heat Dissipation:</strong> Breathable material helps phone cooling.</li>
+                            <li><strong>Ultra-Thin:</strong> Adds minimal bulk to the device.</li>
+                            <li><strong>Scratch Resistant:</strong> Durable finish against daily wear.</li>
+                            <li><strong>Premium Grip:</strong> The textured weave provides a secure hold.</li>
                         </ul>
                     </div>
                 </div>
@@ -935,6 +951,7 @@
         <span class="close-btn" title="Close">&times;</span>
         <div class="modal-content split-layout">
             <div class="modal-pane-left">
+                <div class="modal-project-branding">Project_Cover</div>
                 <div class="modal-image-wrapper">
                     <img src="https://projectcover.github.io/media/brand/project_cover-icon-white.png" alt="Loading..." class="image-loader-logo modal-loader" width="48" height="48">
                     <img class="modal-image" id="modalImage" alt="Enlarged gallery image">
@@ -1015,7 +1032,7 @@
             const allSlideshows = [];
             let globalSlideshowInterval = null;
             const items = document.querySelectorAll('.portfolio-item');
-            const allItemsPromises = []; 
+            const allItemsPromises = [];
             items.forEach(item => {
                 const imageContainer = item.querySelector('.image-container');
                 if (!imageContainer) return;
@@ -1053,7 +1070,7 @@
             const modalImg = document.getElementById("modalImage");
             const captionText = document.getElementById("caption");
             const modalBody = document.getElementById("modal-text-body");
-            const imageCounter = document.getElementById("image-counter"); 
+            const imageCounter = document.getElementById("image-counter");
             const modalImageWrapper = document.querySelector('.modal-image-wrapper');
             const closeBtn = document.querySelector(".close-btn");
             const prevBtn = document.getElementById("prevBtnModal");
@@ -1096,7 +1113,7 @@
             }
             document.querySelectorAll('.view-btn').forEach(button => {
                 button.onclick = function(e) {
-                    if (this.tagName === 'A') return; 
+                    if (this.tagName === 'A') return;
                     const item = this.closest('.portfolio-item');
                     currentImages = item.dataset.images.split(',');
                     currentImageIndex = 0;
@@ -1122,12 +1139,12 @@
                 }, 280);
             }
             closeBtn.onclick = closeModal;
-            window.onclick = (event) => { if (event.target == modal) closeModal(); }
+            window.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
             document.addEventListener('keydown', (event) => { if (event.key === "Escape") closeModal(); });
             const form = document.getElementById('contact-form');
             const submitButton = document.getElementById('submit-button');
             const formMessages = document.getElementById('form-messages');
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbz-nl_YhnNpm-RU930xUasXF8O38qiq92ak54ROXY2b7Oj73o2SQyDoaFBl7IF6TvoW/exec'; 
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbz-nl_YhnNpm-RU930xUasXF8O38qiq92ak54ROXY2b7Oj73o2SQyDoaFBl7IF6TvoW/exec';
             form.addEventListener('submit', e => {
                 e.preventDefault();
                 submitButton.disabled = true;
@@ -1150,7 +1167,7 @@
                         submitButton.disabled = false;
                         submitButton.textContent = 'Let\'s Collaborate';
                         formMessages.style.display = 'block';
-                         setTimeout(() => { formMessages.style.display = 'none'; }, 6000);
+                        setTimeout(() => { formMessages.style.display = 'none'; }, 6000);
                     });
             });
         });
